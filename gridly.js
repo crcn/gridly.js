@@ -10,7 +10,7 @@
 
 		//tells gridly to animate the grid on change / resize
 		animate = ops.animate == undefined ? true : ops.animate,
-
+		
 		//tells gridly to update on gridly(). useful for false if we're just looking at some stats such as the grid width
 		update  = ops.update  == undefined ? true : ops.update,
 
@@ -31,7 +31,6 @@
 				,update:function(animate)
 				{                 
 					      
-					
 					//FIRST we need to find the right positions with each cell         
 					var cellsToPosition =  gdly.organize.bestFit(); 
 
@@ -70,7 +69,7 @@
 				{           
 					//stop all animations
 					c.cell.stop();
-
+					
 					//animate the position of the grid
 					c.cell.animate({left:c.x,top:c.y,opacity:1},gdly.easing.duration,gdly.easing.type)  
 				}  
@@ -92,9 +91,10 @@
 					    
 					//forces items to fit based on their content length
 					,forceFit:function()
-					{
+					{ 
 						
 					}
+					
 					
 					//figured out 
 					,bestFit:function()
@@ -134,7 +134,7 @@
 						var useableCells = [];  
 
 						//skip any cells we can't use
-						for(var i = children.length; i--;)
+						for(var i = 0, n = children.length; i < n; i++)
 						{
 							var child = children[i];
 							
@@ -156,8 +156,7 @@
 							var cell = useableCells[i],
 							cw = cell.width(),
 							ch = cell.height();
-							
-							console.log()
+
 
 							if(isNaN(cw)) cw = 0;
 							if(isNaN(ch)) ch = 0;
@@ -257,8 +256,8 @@
 			               
 			
 			//tells ally gridly's to update. 
-			$(window).bind('gridly.update',_lazyCallback(function()
-			{                     
+			$(window).bind('gridly.update', _lazyCallback(function()
+			{              
 				// gdly.easing.duration = 2000;             
 				gdly.update(true);          
 				// gdly.easing.duration = 200;
@@ -271,7 +270,9 @@
 			
 			
 		}                               
+		
 		if(update) ctx.gdly.update(animate);   
+		
 		return returnGdly ? ctx.gdly : this;
 	}
 	

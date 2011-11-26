@@ -2,10 +2,10 @@
     "name":"gridly",
     "descriptions": "Grid JQuery plugin",
     "version": "0.0.2",
-    "author": "Craig Condon <craig@spiceapps.com>",
+    "author": "Craig Condon <craig@crcn.com>",
     "repository": {
         "type": "git",
-        "url": "http://github.com/spiceapps/gridly.git"
+        "url": "http://github.com/crcn/gridly.git"
     },
     "main": "./gridly.js"
 }
